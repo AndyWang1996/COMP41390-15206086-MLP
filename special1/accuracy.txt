@@ -1,0 +1,2 @@
+On training set, in 16000 samples, Correct = 11427 Wrong = 4573 Accuracy = 0.7141875
+On testing set, in 3999 samples, Correct = 2756 Wrong = 1243 Accuracy = 0.6891722930732683
