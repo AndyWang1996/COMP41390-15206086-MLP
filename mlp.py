@@ -20,6 +20,14 @@ def fill_matrix(a, b, fill):
     return output
 
 
+def linear(x):
+    return x
+
+
+def d_linear(x):
+    return 1
+
+
 def sigmoid(x):
     return 1.0 / (1.0 + math.exp(-x))
 
@@ -50,7 +58,7 @@ def active(x, ACTIVATE_FUNCTION):
     elif ACTIVATE_FUNCTION == 'sigmoid':
         return sigmoid(x)
     else:
-        return relu(x)
+        return linear(x)
 
 
 def d_active(x, ACTIVATE_FUNCTION):
@@ -61,7 +69,7 @@ def d_active(x, ACTIVATE_FUNCTION):
     elif ACTIVATE_FUNCTION == 'sigmoid':
         return d_sigmoid(x)
     else:
-        return d_relu(x)
+        return d_linear(x)
 
 
 class MLP(object):
@@ -293,7 +301,7 @@ def make_graph():
 
 
 def Q3():
-    # data_preprocess_q3()
+    data_preprocess_q3()
     train_data = json.load(open('train_Q3.json'))['data']
     train_labels = json.load(open('train_Q3.json'))['labels']
     labels = []
@@ -504,11 +512,10 @@ def special_question():
     show_error(test_result, test_label_list)
 
 
-# Q1()
-# Q3()
+Q1()
+Q3()
 # data_preprocess_q3()
-# test()
-# make_graph()
+make_graph()
 # data_preprocess_special()
-# special_question()
+special_question()
 statistic_accuracy()
